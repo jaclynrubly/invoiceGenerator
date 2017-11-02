@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Nix Tree Care LLC - Invoice Generator</title>
+
+        <!-- CSS -->
+                
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+	 <header>
+		<div class="logoImg" >
+            <img src="/nixtreecare/imgs/logo.jpg" alt="Nix Tree Care LLC" width="300">
+		</div>
+            <h1>
+                Nix Tree Care LLC
+			</h1>
+	</header>
+
+		<div class="c-form-container section-container section-container-image-bg">
+	        <div class="container">            
+	            <div class="row">
+	            	<div class="col-sm-6 col-sm-offset-3 c-form-box wow fadeInUp">
+                        <div class="c-form-bottom">
+		                    <form action="createpdf.php" method="post">
+								<div class="radio-inline">
+									<label><input type="radio" name="formType" value="Estimate" required>Estimate</label>
+								</div>
+								<div class="radio-inline">
+									<label><input type="radio" name="formType" value="Invoice" required>Invoice</label>
+								</div>
+								<br>
+								<br>
+								<br>
+		                    	<div class="form-group">
+		                    		<label for="c-form-name">
+		                    			<span class="label-text">Customer Name:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="customerName" placeholder="Customer name..." class="c-form-box form-control" id="c-form-name" required>
+		                        </div>
+		                    	<div class="form-group">
+		                    		<label for="c-form-address">
+		                    			<span class="label-text">Address:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="address" placeholder="Customer street address..." 
+										   class="c-form-address form-control" id="c-form-address">
+		                        </div>
+		                        <div class="form-group">
+		                        	<label for="c-form-city">
+		                    			<span class="label-text">City:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="city" placeholder="Customer city..."
+										   class="c-form-city form-control" id="c-form-city">
+		                        </div>
+								<div class="form-group">
+		                        	<label for="c-form-tel">
+		                    			<span class="label-text">Telephone:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="phone" placeholder="(123)456-7890" class="c-form-tel form-control" id="c-form-tel" required>
+								</div>
+								<div class="form-group">
+		                        	<label for="c-form-mobile">
+		                    			<span class="label-text">Mobile:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="mobile" placeholder="Mobile phone number" class="c-form-mobile form-control" id="c-form-mobile">
+		                        </div>
+		                        <div class="form-group">
+		                        	<label for="c-form-email">
+		                    			<span class="label-text">Email:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="email" placeholder="Customer email address..." class="c-form-email form-control" id="c-form-email">
+		                        </div>
+								<div class="form-group">
+		                        	<label for="c-form-jobAddress">
+		                    			<span class="label-text">Job Address:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="jobAddress" placeholder="Job street address" class="c-form-jobAddress form-control" id="c-form-jobAddress" required>
+		                        </div>
+								<div class="form-group">
+		                        	<label for="c-form-jobCity">
+		                    			<span class="label-text">Job City:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="jobCity" placeholder="Job location" class="c-form-jobCity form-control" id="c-form-jobCity" required>
+		                        </div>
+								<div class="form-group">
+		                        	<label for="c-form-date">
+		                    			<span class="label-text">Date:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="date" placeholder="Date scheduled" class="c-form-date form-control" id="c-form-date" required>
+		                        </div>
+								<div class="form-group">
+		                        	<label for="c-form-estimator">
+		                    			<span class="label-text">Estimator:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="estimator" placeholder="Estimators name" class="c-form-estimator form-control" id="c-form-estimator" required>
+		                        </div>
+								<div class="form-group">
+		                        	<label for="c-form-approvalDate">
+		                    			<span class="label-text">Date Approved:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="approvalDate" placeholder="Approval date" class="c-form-approvalDate form-control" id="c-form-approvalDate" required>
+		                        </div>
+ 								<div class="form-group">
+		                        	<label for="c-form-refrenceNum">
+		                    			<span class="label-text">Invoice Number:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="refrenceNum" placeholder="P.O. Refrence #" class="c-form-refrenceNum form-control" id="c-form-refrenceNum" required>
+		                        </div> 
+		 						<div class="form-group">
+		                        	<label for="c-form-contact">
+		                    			<span class="label-text">Contact:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="contact" placeholder="Contact info" class="c-form-contact form-control" id="c-form-contact" required>
+		                        </div> 
+<!-- 								<label class="checkbox-inline">
+									<input type="checkbox" name="noClean">No Clean Up
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="haulBrush">Haul Brush
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="haulWood">Haul Wood
+								</label>
+								<br>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="haulStump">Haul Stump Chips
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="leaveWood">Leave Wood Onsite
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="other">Other
+								</label> -->
+								<input id="noClean" class="icon-checkbox" type="checkbox" name="noClean"/>
+								<label for="noClean">
+								  <span class='glyphicon glyphicon-unchecked unchecked'></span>
+								  <span class='glyphicon glyphicon-check checked'></span>
+								  No Clean Up
+								</label>
+								<br>
+								<input id="haulBrush" class="icon-checkbox" type="checkbox" name="haulBrush"/>
+								<label for="haulBrush">
+								  <span class='glyphicon glyphicon-unchecked unchecked'></span>
+								  <span class='glyphicon glyphicon-check checked'></span>
+								  Haul Brush
+								</label>
+								<br>
+								<input id="haulWood" class="icon-checkbox" type="checkbox" name="haulWood"/>
+								<label for="haulWood">
+								  <span class='glyphicon glyphicon-unchecked unchecked'></span>
+								  <span class='glyphicon glyphicon-check checked'></span>
+								  Haul Wood
+								</label>
+								<br>
+								<input id="haulStump" class="icon-checkbox" type="checkbox" name="haulStump"/>
+								<label for="haulStump">
+								  <span class='glyphicon glyphicon-unchecked unchecked'></span>
+								  <span class='glyphicon glyphicon-check checked'></span>
+								  Haul Stump Chips
+								</label>
+								<br>
+								<input id="leaveWood" class="icon-checkbox" type="checkbox" name="leaveWood"/>
+								<label for="leaveWood">
+								  <span class='glyphicon glyphicon-unchecked unchecked'></span>
+								  <span class='glyphicon glyphicon-check checked'></span>
+								  Leave Wood Onsite
+								</label>
+								<br>
+								<input id="other" class="icon-checkbox" type="checkbox" name="other"/>
+								<label for="other">
+								  <span class='glyphicon glyphicon-unchecked unchecked'></span>
+								  <span class='glyphicon glyphicon-check checked'></span>
+								  Other
+								</label>
+<!-- 								<div class="checkbox">
+									<label class="custom-control custom-checkbox">
+										<input type="checkbox" [(ngModel)]="other" name="other" class="custom-control-input">
+										<span class="custom-control-indicator"></span>
+										<span class="custom-control-description">Other</span>
+									</label>
+								</div> -->
+                				<hr>
+
+<!--Job1***************Job1***************Job1***************Job1***************Job1***************Job1***************-->
+								<h2>First Job</h2>
+								<div class="form-group">
+		                        	<label for="c-form-species1">
+		                    			<span class="label-text">Species:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="species1" placeholder="Species of tree" class="c-form-species form-control" id="c-form-species1" required>
+		                        </div>
+								<div class="form-group">
+		                        	<label for="c-form-location1">
+		                    			<span class="label-text">Location:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="location1" placeholder="Location of job" class="c-form-location form-control" id="c-form-location1" required>
+		                        </div>
+								<div class="form-group">
+		                        	<label for="c-form-description1">
+		                    			<span class="label-text">Job Description:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="description1" placeholder="Location of job" class="c-form-description form-control" id="c-form-description1" required>
+		                        </div>
+								<div class="form-group">
+		                        	<label for="c-form-amount1">
+		                    			<span class="label-text">Amount:</span> 
+		                    			<!--<span class="contact-error"></span>-->
+		                    		</label>
+		                        	<input type="text" name="amount1" placeholder="How much" class="c-form-amount form-control" id="c-form-amount1" required>
+		                        </div>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="remove1">Remove
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="prune1">Prune
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="stump1">Stump
+								</label>
+								<hr>
+
+<!--Job2***************Job2***************Job2***************Job2***************Job2***************Job2***************-->
+								<input data-toggle="collapse" data-target="#job2" type="button" class="btn btn-primary" value="Second Job">
+								<div id="job2" class="collapse">
+									<div class="form-group">
+										<label for="c-form-species2">
+											<span class="label-text">Species:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="species2" placeholder="Species of tree" class="c-form-species form-control" id="c-form-species2">
+									</div>
+									<div class="form-group">
+										<label for="c-form-location2">
+											<span class="label-text">Location:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="location2" placeholder="Location of job" class="c-form-location form-control" id="c-form-location2" >
+									</div>
+									<div class="form-group">
+										<label for="c-form-description2">
+											<span class="label-text">Job Description:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="description2" placeholder="Location of job" class="c-form-description form-control" id="c-form-description2" >
+									</div>
+									<div class="form-group">
+										<label for="c-form-amount2">
+											<span class="label-text">Amount:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="amount2" placeholder="How much" class="c-form-amount form-control" id="c-form-amount2" >
+									</div>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="remove2">Remove
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="prune2">Prune
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="stump2">Stump
+									</label>
+								</div>
+								<hr>
+
+<!--Job3***************Job3***************Job3***************Job3***************Job3***************Job3***************-->
+								<input data-toggle="collapse" data-target="#job3" type="button" class="btn btn-primary" value="Third Job">
+								<div id="job3" class="collapse">
+									<div class="form-group">
+										<label for="c-form-species3">
+											<span class="label-text">Species:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="species3" placeholder="Species of tree" class="c-form-species form-control" id="c-form-species3">
+									</div>
+									<div class="form-group">
+										<label for="c-form-location3">
+											<span class="label-text">Location:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="location3" placeholder="Location of job" class="c-form-location form-control" id="c-form-location3" >
+									</div>
+									<div class="form-group">
+										<label for="c-form-description3">
+											<span class="label-text">Job Description:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="description3" placeholder="Location of job" class="c-form-description form-control" id="c-form-description3" >
+									</div>
+									<div class="form-group">
+										<label for="c-form-amount3">
+											<span class="label-text">Amount:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="amount3" placeholder="How much" class="c-form-amount form-control" id="c-form-amount3" >
+									</div>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="remove3">Remove
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="prune3">Prune
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="stump3">Stump
+									</label>
+								</div>
+
+								<hr>
+
+<!--Job4***************Job4***************Job4***************Job4***************Job4***************Job4***************-->
+								<input data-toggle="collapse" data-target="#job4" type="button" class="btn btn-primary" value="Fourth Job">
+								<div id="job4" class="collapse">
+									<div class="form-group">
+										<label for="c-form-species4">
+											<span class="label-text">Species:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="species4" placeholder="Species of tree" class="c-form-species form-control" id="c-form-species4">
+									</div>
+									<div class="form-group">
+										<label for="c-form-location4">
+											<span class="label-text">Location:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="location4" placeholder="Location of job" class="c-form-location form-control" id="c-form-location4" >
+									</div>
+									<div class="form-group">
+										<label for="c-form-description4">
+											<span class="label-text">Job Description:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="description4" placeholder="Location of job" class="c-form-description form-control" id="c-form-description4" >
+									</div>
+									<div class="form-group">
+										<label for="c-form-amount4">
+											<span class="label-text">Amount:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="amount4" placeholder="How much" class="c-form-amount form-control" id="c-form-amount4" >
+									</div>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="remove4">Remove
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="prune4">Prune
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="stump4">Stump
+									</label>
+								</div>
+								<hr>
+
+<!--Job5***************Job5***************Job5***************Job5***************Job5***************Job5***************-->
+								<input data-toggle="collapse" data-target="#job5" type="button" class="btn btn-primary" value="Fifth Job">
+								<div id="job5" class="collapse">
+									<div class="form-group">
+										<label for="c-form-species5">
+											<span class="label-text">Species:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="species5" placeholder="Species of tree" class="c-form-species form-control" id="c-form-species5">
+									</div>
+									<div class="form-group">
+										<label for="c-form-location5">
+											<span class="label-text">Location:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="location5" placeholder="Location of job" class="c-form-location form-control" id="c-form-location5" >
+									</div>
+									<div class="form-group">
+										<label for="c-form-description5">
+											<span class="label-text">Job Description:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="description5" placeholder="Location of job" class="c-form-description form-control" id="c-form-description5" >
+									</div>
+									<div class="form-group">
+										<label for="c-form-amount5">
+											<span class="label-text">Amount:</span> 
+											<!--<span class="contact-error"></span>-->
+										</label>
+										<input type="text" name="amount5" placeholder="How much" class="c-form-amount form-control" id="c-form-amount5" >
+									</div>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="remove5">Remove
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="prune5">Prune
+									</label>
+									<label class="checkbox-inline">
+										<input type="checkbox" name="stump5">Stump
+									</label>
+								</div>
+					<!--**************Total***************************************Totals**********************************Totals*********************-->
+								<hr>
+								<hr>
+								<div class="form-group">
+		                        	<label for="c-form-subtotal">
+		                    			<span class="label-text">Sub Total:</span> 
+		                    		</label>
+		                        	<input type="text" name="subtotal" placeholder="Amount without taxes"
+										   class="c-form-box form-control" id="c-form-subtotal" >
+		                        </div>
+								<div class="form-group">
+		                        	<label for="c-form-taxes">
+		                    			<span class="label-text">Taxes:</span> 
+		                    		</label>
+		                        	<input type="text" name="taxes" placeholder="Taxes due"
+										   class="c-form-box form-control" id="c-form-taxes" >
+		                        </div>
+								<div class="form-group">
+		                        	<label for="c-form-total">
+		                    			<span class="label-text">Total Amount Due:</span> 
+		                    		</label>
+		                        	<input type="text" name="total" placeholder="Total with taxes"
+										   class="c-form-box form-control" id="c-form-total" >
+		                        </div>
+		                        <button type="submit" class="btn btn-primary" name='submit'>Submit</button>
+		                    </form>
+	                    </div>
+	                    
+	                </div>
+	            </div>
+	        </div>
+        </div>
+        
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>
